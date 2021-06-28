@@ -1,4 +1,5 @@
 \documentclass[journal,12pt,twocolumn]{IEEEtran}
+
 \usepackage{setspace}
 \usepackage{gensymb}
 
@@ -145,15 +146,25 @@ From the given information,
 \begin{align}
 \norm{\vec{P}-\vec{A}}^2=\norm{\vec{P}-\vec{B}}^2
 \\
-\implies\norm{\vec{P}-\myvec{3\\4\\-5}}^2=\norm{\vec{P}-\myvec{-2\\1\\4}}^2
+\implies\norm{\vec{P}}^2+\norm{\vec{A}}^2-2\vec{A}^T\vec{P}
 \\
-\implies\norm{\vec{P}}^2+\norm{\myvec{3 \\ 4 \\ -5}}^2-2\myvec{3 & 4 & -5}\vec{P}
+=\norm{\vec{P}}^2+\norm{\vec{B}}^2-2\vec{B}^T\vec{P}
 \\
-=\norm{\vec{P}}^2+\norm{\myvec{-2 \\ 1 \\ 4}}^2-2\myvec{-2 & 1 & 4}\vec{P}
+\implies2\vec{A}^T\vec{P}-2\vec{B}^T\vec{P}=\norm{\vec{A}}^2-\norm{\vec{B}}^2   \label{eq1}
+\end{align}
+Also given, 
+\begin{align}
+\vec{A}=\myvec{3 \\ 4 \\ -5}, \vec{B}=\myvec{-2 \\ 1 \\ 4}   \label{eq2}
+\end{align}
+Putting \eqref{eq2} in \eqref{eq1},we get 
+\begin{align}
+2\myvec{3 & 4 & -5}\vec{P}-2\myvec{-2 & 1 & 4}\vec{P}
 \\
-\implies\myvec{-6 & -8 & 10}\vec{P}+\myvec{-4 & 2 & 8}\vec{P}
+=\norm{\myvec{3\\4\\-5}}^2-\norm{\myvec{-2\\1\\4}}^2
 \\
-=21-50
+\implies\myvec{6 & 8 & -10}\vec{P}+\myvec{4 & -2 & -8}\vec{P}
+\\
+=50-21
 \\
 \implies\myvec{10 & 6 & -18}\vec{P}=29
 \end{align}
@@ -161,7 +172,6 @@ $\therefore$ The required equation is
 \begin{align}
 \myvec{10 & 6 & -18}\vec{P}=29
 \end{align}
-
 
 Plot of the equation whose distance from the points A and B are equal-
 \numberwithin{figure}{section}
