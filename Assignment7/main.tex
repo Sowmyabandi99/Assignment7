@@ -120,7 +120,7 @@ columns=fullflexible
      \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
      \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
 \vspace{3cm}
-\title{ASSIGNMENT 7}
+\title{ASSIGNMENT 5}
 \author{SOWMYA BANDI}
 \maketitle
 \newpage
@@ -129,56 +129,92 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
-https://github.com/Sowmyabandi99/Assignment7/blob/main/Assignment7/assignment7.py
+\begin{lstlisting}
+https://github.com/Sowmyabandi99/Assignment5/blob/main/Ass5/assignment5.py
 \end{lstlisting}
 %
 Latex-tikz codes from 
 %
 \begin{lstlisting}
-https://github.com/Sowmyabandi99/Assignment7/blob/main/Assignment7/main.tex
+https://github.com/Sowmyabandi99/Assignment5/blob/main/Ass5/main.tex
 \end{lstlisting}
 %
-\section{Question No 2.29}
-Find the equation of the set of points $\vec{P}$ such that its distances from the points $\vec{A}=\myvec{3 \\ 4 \\ -5}$ and $\vec{B}=\myvec{-2 \\ 1 \\ 4}$ are equal.
+\section{Question No 2.51}
+Find the intervals in which the function 
+\begin{align}
+f(x) = x^2-4x+6 
+\end{align}
+%
+is
+%
+\begin{enumerate}
+\item increasing
+\item decreasing
+\end{enumerate}
 %
 \section{SOLUTION} 
-From the given information,
+Given equation can be written as
 \begin{align}
-\norm{\vec{P}-\vec{A}}^2=\norm{\vec{P}-\vec{B}}^2
+y = x^2-4x+6      \label{eq1}
 \\
-\implies\norm{\vec{P}}^2+\norm{\vec{A}}^2-2\vec{A}^T\vec{P}
-\\
-=\norm{\vec{P}}^2+\norm{\vec{B}}^2-2\vec{B}^T\vec{P}
-\\
-\implies2\vec{A}^T\vec{P}-2\vec{B}^T\vec{P}=\norm{\vec{A}}^2-\norm{\vec{B}}^2   \label{eq1}
+\implies x^2-4x-y+6 =0
 \end{align}
-Also given, 
 \begin{align}
-\vec{A}=\myvec{3 \\ 4 \\ -5}, \vec{B}=\myvec{-2 \\ 1 \\ 4}   \label{eq2}
+\vec{x}^T\myvec{1 & 0 \\ 0 & 0}\vec{x}+ 2\myvec{2 \\ \frac{-1}{2}}\vec{x}+f&=0
 \end{align}
-Putting \eqref{eq2} in \eqref{eq1},we get 
+Here,
 \begin{align}
-2\myvec{3 & 4 & -5}\vec{P}-2\myvec{-2 & 1 & 4}\vec{P}
-\\
-=\norm{\myvec{3\\4\\-5}}^2-\norm{\myvec{-2\\1\\4}}^2
-\\
-\implies\myvec{6 & 8 & -10}\vec{P}+\myvec{4 & -2 & -8}\vec{P}
-\\
-=50-21
-\\
-\implies\myvec{10 & 6 & -18}\vec{P}=29
+\vec{V}=\myvec{1 & 0 \\ 0 & 0},\vec{u}=\myvec{2 \\ \frac{-1}{2}},f=6  \label{eq2}
 \end{align}
-$\therefore$ The required equation is
+Using eigen decomposition on $\vec{V}$,
 \begin{align}
-\myvec{10 & 6 & -18}\vec{P}=29
+\vec{V}&=\vec{P}\vec{D}\vec{P}^T
+\\
+where,\vec{D}&=\myvec{\lambda_1 & 0 \\ 0 & \lambda_2} = \myvec{0 & 0\\0 & 1}   \label{eq3}
+\\
+\vec{P}&=\myvec{\vec{p_1} & \vec{p_2}} =\myvec{0 & 1\\1 & 0}  \label{eq4}
 \end{align}
+The vertex of parabola $\vec{c}$ is given by
+\begin{align}
+\myvec{\vec{u}^T + \eta\vec{p_1}^T \\ \vec{V}}\vec{c} &= \myvec{-f \\ \eta\vec{p_1}-\vec{u}} \label{eq5}
+\end{align}
+\begin{align}
+where,\eta=\vec{u}^T\vec{p_1}=\frac{-1}{2}  \label{eq6}
+\end{align}
+Substituting values from \eqref{eq2},\eqref{eq4} and \eqref{eq6} in \eqref{eq5}
+\begin{align}
+\myvec{-2 & -1 \\ 1 & 0 \\ 0 & 0}\vec{c} &= \myvec{-6 \\ 2 \\ 0} \label{eq7}
+\end{align}
+Removing last row and representing \eqref{eq7} as augmented matrix and then converting the matrix to echelon form,
+\begin{align}
+\myvec{-2 & -1 & -6\\1 & 0 & 2} 
+\xleftrightarrow{R_1\leftarrow \frac{R_1}{-2}}\myvec{1 & \frac{1}{2} & 2\\1 & 0 & 2} 
+\\
+%\myvec{1 & \frac{1}{2} & 3 \\0 & \frac{-1}{2} & -1}
+\xleftrightarrow{R_2\leftarrow R_2 -R_1}\myvec{1 & \frac{1}{2} & 3 \\0 & \frac{-1}{2} & -1}
+\\
+%\myvec{1 & \frac{1}{2} & 3 \\0 & 1 & 2}
+\xleftrightarrow{R_2\leftarrow (-2R_2)}\myvec{1 & \frac{1}{2} & 3 \\0 & 1 & 2}
+\\
+%\myvec{1 & 0 & 2\\0 & 1 & 2}
+\xleftrightarrow{R_1\leftarrow R_1 - \frac{R_2}{2}}\myvec{1 & 0 & 2\\0 & 1 & 2}   \label{eq8}
+\end{align}
+From $\eqref{eq8}$ it can be observed that,
+\begin{align}
+\vec{c} &= \myvec{2 \\ 2}
+\end{align}
+$\therefore$ From -$\infty$ to $\vec{c}$ the function is decreasing and from $\vec{c}$ to $\infty$ the function is increasing.
+\begin{enumerate}
+\item f is increasing in interval (2,$\infty$)
+\item f is decreasing in interval (-$\infty$,2)
+\end{enumerate}
 
-Plot of the equation whose distance from the points A and B are equal-
+Plot of Parabola-
 \numberwithin{figure}{section}
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\columnwidth]{Figure.png}
-    \caption{Plot of the plane}
-    \label{fig}
+    \caption{Parabola}
+    \label{fig:Prarabola}
 \end{figure}    
 \end{document}
