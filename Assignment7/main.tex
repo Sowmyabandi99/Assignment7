@@ -159,7 +159,7 @@ where,$\vec{n}^T$ is the normal vector to the plane
 \begin{itemize}
 \item From \eqref{eq1},
 \begin{align}
-\myvec{2\vec{A}^T-2\vec{B}^T}\vec{P}=\norm{\vec{A}}^2-\norm{\vec{B}}^2
+\myvec{2\vec{A}^T-2\vec{B}^T}\vec{P}=\norm{\vec{A}}^2-\norm{\vec{B}}^2 \label{eq2}
 \end{align}
 $\vec{P}$ is a plane and it is perpendicular bisector to $\vec{A}-\vec{B}$
 \\
@@ -168,9 +168,22 @@ $\because\vec{P}$ is perpendicular to line joining $\vec{A}$ and $\vec{B}$
 \begin{align}
 \vec{M}= \frac{\vec{A}+\vec{B}}{2}
 \end{align}
-\item Substitute in \eqref{eq1},
+\item Substitute in \eqref{eq2},
 \begin{align}
-\myvec{2\vec{A}^T-2\vec{B}^T}\brak{\frac{\vec{A}+\vec{B}}{2}}=\norm{\vec{A}}^2-\norm{\vec{B}}^2 
+\myvec{2\vec{A}^T-2\vec{B}^T}\brak{\frac{\vec{A}+\vec{B}}{2}}
+=\myvec{\vec{A}^T-\vec{B}^T}\myvec{\vec{A}+\vec{B}}
+\\
+=\vec{A}^T\vec{A}+\vec{A}^T\vec{B}-\vec{B}^T\vec{A}-\vec{B}^T\vec{B}
+\end{align}
+\begin{align}
+\because \vec{A}^T\vec{A}=\norm{\vec{A}}^2,
+\\
+\vec{B}^T\vec{B}=\norm{\vec{B}}^2,
+\\
+\vec{A}^T\vec{B}=\vec{B}^T\vec{A}
+\end{align}
+\begin{align}
+\implies\myvec{2\vec{A}^T-2\vec{B}^T}\brak{\frac{\vec{A}+\vec{B}}{2}}=\norm{\vec{A}}^2-\norm{\vec{B}}^2 
 \end{align}
 $\implies \frac{\vec{A}+\vec{B}}{2}$ satisfies \eqref{eq1}
 \item $\therefore$ $\vec{P}$ is the plane that is perpendicular bisector of the line joining the given points 
